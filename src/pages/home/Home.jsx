@@ -1,6 +1,6 @@
 import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
-import firstImg from "../../assets/images/slider-1.jpg";
+import firstImg from "../../assets/images/diu-trans.jpg";
 import secondImg from "./../../assets/images/CARUSEL-2.png";
 import thirdImg from "./../../assets/images/CARUSEL-3.png";
 import { Box, Button, Paper, Typography } from "@mui/material";
@@ -10,14 +10,14 @@ const Home = () => {
 	return (
 		<Paper className="bg" elevation={4} sx={{ borderRadius: "20px" }}>
 			<div className="home">
-				<Carousel variant="dark">
+				<Carousel variant="light">
 					<Carousel.Item className="overlay-container">
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h3">First slide label - 1</Typography>
-								<Typography variant="h5">
-									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								<Typography variant="h1">TRANSPORT</Typography>
+								<Typography className="intro-pera" variant="h2">
+									DIU-Transportation tracking is a major issue to our students.
 								</Typography>
 								<Button
 									className="button-glass"
