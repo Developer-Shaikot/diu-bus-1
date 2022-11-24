@@ -15,7 +15,7 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h3">First slide label</Typography>
+								<Typography variant="h3">First slide label - 1</Typography>
 								<Typography variant="h5">
 									Nulla vitae elit libero, a pharetra augue mollis interdum.
 								</Typography>
@@ -29,25 +29,41 @@ const Home = () => {
 							</Carousel.Caption>
 						</Box>
 					</Carousel.Item>
-					<Carousel.Item>
-						<img className="caruselImg" src={secondImg} alt="Second slide" />
-						<Carousel.Caption>
-							<h5>Second slide label</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-							<Button variant="outlined" endIcon={<StartIcon />}>
-								Get Start
-							</Button>
-						</Carousel.Caption>
+					<Carousel.Item className="overlay-container">
+						<img className="caruselImg" src={firstImg} alt="First slide" />
+						<Box className="overlay">
+							<Carousel.Caption>
+								<Typography variant="h3">First slide label - 2</Typography>
+								<Typography variant="h5">
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</Typography>
+								<Button
+									className="button-glass"
+									variant="outlined"
+									endIcon={<StartIcon />}
+								>
+									Get Start
+								</Button>
+							</Carousel.Caption>
+						</Box>
 					</Carousel.Item>
-					<Carousel.Item>
-						<img className="caruselImg" src={thirdImg} alt="Third slide" />
-						<Carousel.Caption>
-							<h5>Third slide label</h5>
-							<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-							<Button variant="outlined" endIcon={<StartIcon />}>
-								Get Start
-							</Button>
-						</Carousel.Caption>
+					<Carousel.Item className="overlay-container">
+						<img className="caruselImg" src={firstImg} alt="First slide" />
+						<Box className="overlay">
+							<Carousel.Caption>
+								<Typography variant="h3">First slide label - 3</Typography>
+								<Typography variant="h5">
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</Typography>
+								<Button
+									className="button-glass"
+									variant="outlined"
+									endIcon={<StartIcon />}
+								>
+									Get Start
+								</Button>
+							</Carousel.Caption>
+						</Box>
 					</Carousel.Item>
 				</Carousel>
 			</div>
