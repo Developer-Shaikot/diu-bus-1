@@ -28,7 +28,6 @@ import logo from "../../assets/images/main.png";
 import img from "../../assets/images/TRANSPORT.png";
 import "./Sidebar.css";
 import Navbar from "../navbar/Navbar";
-import Home from "../../pages/home/Home";
 
 const drawerWidth = 240;
 
@@ -76,7 +75,7 @@ const DrawerComp = styled(Drawer, { shouldForwardProp: (prop) => prop !== "open"
 	})
 );
 
-const Sidebar = () => {
+const Sidebar = ({ children }) => {
 	// const theme = useTheme();
 	const [open, setOpen] = useState(true);
 
@@ -91,6 +90,7 @@ const Sidebar = () => {
 	return (
 		<Box sx={{ display: "flex" }}>
 			<CssBaseline />
+			{/* add navbar */}
 			<Navbar open={open} handleDrawerOpen={handleDrawerOpen} />
 			<DrawerComp
 				PaperProps={{
@@ -133,7 +133,7 @@ const Sidebar = () => {
 					alt=""
 				/>
 				<Divider />
-				<NavLink className={open ? "bar" : "bar shrink"} to="/">
+				<NavLink className={open ? "bar" : "bar shrink"} to="/" end>
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -145,10 +145,9 @@ const Sidebar = () => {
 							<ListItemText />
 						</ListItem>
 					</List>
-
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/dashboard`}>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/dashboard">
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -241,7 +240,7 @@ const Sidebar = () => {
 			</DrawerComp>
 			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 				<DrawerHeader />
-				<Home/>
+				{children}
 			</Box>
 		</Box>
 	);

@@ -1,4 +1,3 @@
-import Sidebar from "../../components/sidebar/Sidebar";
 import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
 import firstImg from "../../assets/images/caru-1.png";
@@ -7,6 +6,7 @@ import thirdImg from './../../assets/images/CARUSEL-3.png';
 import logo from './../../assets/images/diu-trans.jpg';
 import { Button } from "@mui/material";
 import StartIcon from '@mui/icons-material/Start';
+
 const Home = () => {
 	return (
 		<div>
@@ -51,8 +51,6 @@ const Home = () => {
 									</Carousel.Caption>
 								</Carousel.Item>
 							</Carousel>
-
-
 						</div>
 					</div>
 				</div>
