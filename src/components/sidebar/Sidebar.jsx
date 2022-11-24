@@ -90,18 +90,21 @@ const Sidebar = ({ children }) => {
 	return (
 		<Box sx={{ display: "flex" }}>
 			<CssBaseline />
-			{/* add navbar */}
+			{/*------------- add navbar ----------------*/}
 			<Navbar open={open} handleDrawerOpen={handleDrawerOpen} />
 			<DrawerComp
 				PaperProps={{
 					sx: {
-						backgroundColor: "rgb(1, 26, 95, 0.7)",
+						backgroundColor: "#082268",
+						background: "rgb(8,34,104)",
+						background:
+							"linear-gradient(25deg, rgba(8,34,104,1) 34%, rgba(0,25,95,1) 94%)",
 					},
 				}}
 				variant="permanent"
 				open={open}
 			>
-				<DrawerHeader className="sidebar-container">
+				<DrawerHeader className="sidebar-header">
 					{open && (
 						<img
 							style={{
@@ -120,18 +123,21 @@ const Sidebar = ({ children }) => {
 					</IconButton>
 				</DrawerHeader>
 				<Divider />
-				<img
-					style={{
+				<Box
+					sx={{
 						width: "100%",
-						hight: "50%",
 						marginTop: "8px",
 						marginBottom: "8px",
-						borderRadius: "50%",
+
 						padding: "8%",
 					}}
-					src={img}
-					alt=""
-				/>
+				>
+					<img
+						style={{ width: "100%", borderRadius: "50%", border: "5px solid #3956a3" }}
+						src={img}
+						alt=""
+					/>
+				</Box>
 				<Divider />
 				<NavLink className={open ? "bar" : "bar shrink"} to="/" end>
 					<List>
@@ -238,7 +244,7 @@ const Sidebar = ({ children }) => {
 					<Divider />
 				</NavLink>
 			</DrawerComp>
-			<Box component="main" sx={{ flexGrow: 1, p: 3 }}>
+			<Box component="main" className="main-bg" sx={{ flexGrow: 1, p: 3 }}>
 				<DrawerHeader />
 				{children}
 			</Box>

@@ -1,7 +1,9 @@
 import { styled } from "@mui/material/styles";
-import { AppBar, IconButton, Toolbar, Typography } from "@mui/material";
-import { ChevronRight, Menu } from "@mui/icons-material";
+import { AppBar, Box, IconButton, Stack, Toolbar, Typography } from "@mui/material";
+import { ChevronRight, Inbox, Menu, NotificationsNone } from "@mui/icons-material";
 import Profile from "../sidebar/Profile";
+import { useLocation } from "react-router-dom";
+import SearchBox from "../searchBox/SearchBox";
 
 const drawerWidth = 240;
 
@@ -24,8 +26,16 @@ const AppBarComp = styled(AppBar, {
 }));
 
 const Navbar = ({ open, handleDrawerOpen }) => {
+	const location = useLocation();
 	return (
-		<AppBarComp style={{ background: "rgb(1, 26, 95, 0.7)" }} position="fixed" open={open}>
+		<AppBarComp
+			className="main-nav"
+			sx={{
+				background: "linear-gradient(305deg, rgba(11,40,120,1) 47%, rgba(10,45,143,1) 75%)",
+			}}
+			position="fixed"
+			open={open}
+		>
 			<Toolbar>
 				<IconButton
 					color="inherit"
@@ -40,10 +50,27 @@ const Navbar = ({ open, handleDrawerOpen }) => {
 				>
 					<Menu />
 				</IconButton>
-				<Typography variant="body2" noWrap component="div">
-					App <ChevronRight fontSize="small" /> Dashboard
-				</Typography>
-                <Profile />
+				<Stack
+					width="100%"
+					direction="row"
+					alignItems="center"
+					justifyContent="space-between"
+				>
+					<Typography variant="body2" noWrap component="div">
+						APP <ChevronRight fontSize="small" />{" "}
+						{location.pathname !== "/"
+							? location.pathname.split("/")[1].toLocaleUpperCase()
+							: "HOME"}
+					</Typography>
+					<Stack direction="row" alignItems="center">
+						<SearchBox />
+						<Stack direction="row" gap={2} px={2}>
+							<Inbox />
+							<NotificationsNone />
+						</Stack>
+						<Profile />
+					</Stack>
+				</Stack>
 			</Toolbar>
 		</AppBarComp>
 	);
