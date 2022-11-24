@@ -3,21 +3,27 @@ import Carousel from "react-bootstrap/Carousel";
 import firstImg from "../../assets/images/slider-1.jpg";
 import secondImg from "./../../assets/images/CARUSEL-2.png";
 import thirdImg from "./../../assets/images/CARUSEL-3.png";
-import { Box, Button, Paper } from "@mui/material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import StartIcon from "@mui/icons-material/Start";
 
 const Home = () => {
 	return (
-		<Paper className="bg" elevation={4}>
+		<Paper className="bg" elevation={4} sx={{ borderRadius: "20px" }}>
 			<div className="home">
 				<Carousel variant="dark">
 					<Carousel.Item className="overlay-container">
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<h5>First slide label</h5>
-								<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-								<Button variant="outlined" endIcon={<StartIcon />}>
+								<Typography variant="h3">First slide label</Typography>
+								<Typography variant="h5">
+									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								</Typography>
+								<Button
+									className="button-glass"
+									variant="outlined"
+									endIcon={<StartIcon />}
+								>
 									Get Start
 								</Button>
 							</Carousel.Caption>
