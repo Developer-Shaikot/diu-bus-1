@@ -17,12 +17,17 @@ const Profile = () => {
 				<IconButton
 					onClick={handleClick}
 					size="small"
-					sx={{ ml: "auto" }}
+					// sx={{ ml: "auto" }}
 					aria-controls={open ? "account-menu" : undefined}
 					aria-haspopup="true"
 					aria-expanded={open ? "true" : undefined}
 				>
-					<Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
+					<Avatar
+						src="https://mui.com/static/images/avatar/2.jpg"
+						sx={{ width: 32, height: 32 }}
+					>
+						M
+					</Avatar>
 				</IconButton>
 			</Tooltip>
 			<Menu
