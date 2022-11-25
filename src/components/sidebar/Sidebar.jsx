@@ -168,21 +168,6 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/weather`}>
-					<List>
-						<ListItem>
-							<ListItemIcon>
-								<AllInbox className="icon" />
-							</ListItemIcon>
-							<p className={!open ? "pra-hidden pra mt-2 mb-1" : "pra mt-2 mb-1"}>
-								Inbox
-							</p>
-							<ListItemText />
-						</ListItem>
-					</List>
-
-					<Divider />
-				</NavLink>
 				<NavLink className={open ? "bar" : "bar shrink"} to={`/points`}>
 					<List>
 						<ListItem>
@@ -213,7 +198,7 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/message`}>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/transport">
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -221,6 +206,21 @@ const Sidebar = ({ children }) => {
 							</ListItemIcon>
 							<p className={!open ? "pra-hidden pra mt-2 mb-1" : "pra mt-2 mb-1"}>
 								Transport
+							</p>
+							<ListItemText />
+						</ListItem>
+					</List>
+
+					<Divider />
+				</NavLink>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/inbox">
+					<List>
+						<ListItem>
+							<ListItemIcon>
+								<AllInbox className="icon" />
+							</ListItemIcon>
+							<p className={!open ? "pra-hidden pra mt-2 mb-1" : "pra mt-2 mb-1"}>
+								Inbox
 							</p>
 							<ListItemText />
 						</ListItem>
