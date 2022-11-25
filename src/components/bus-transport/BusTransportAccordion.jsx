@@ -15,7 +15,8 @@ import {
 
 const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) => {
 	return (
-		<Accordion elevation={2}>
+		<Accordion elevation={2}  TransitionProps={{ unmountOnExit: true }}
+		>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}
 				aria-controls="panel1a-content"
