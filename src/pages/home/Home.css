@@ -16,8 +16,11 @@
 .intro-pera {
 	text-align: center;
 	text-decoration: wavy;
+	font-size: large;
+	font-style: initial;
+	font-weight: 700;
 	text-indent: 2%;
-	line-height: 200%;
+	line-height: 300%;
 	margin-left: 50px;
 	margin-right: 50px;
 }

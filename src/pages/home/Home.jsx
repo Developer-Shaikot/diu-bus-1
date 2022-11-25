@@ -24,9 +24,13 @@ const Home = () => {
 						<Box className="overlay">
 							<Carousel.Caption>
 								<Typography variant="h2">TRACK THE BUS</Typography>
+								<br />
+								<br />
 								<Typography className="intro-pera" variant="h3">
-									Could not able to track the DIU-BUS is a major issue to our students and teachers at this point.
+									Could not able to track the DIU-BUS is a major issue to <br /> our students and teachers at this point.
 								</Typography>
+								<br />
+								<br />
 								<Button
 									className="button-glass"
 									variant="outlined"
@@ -41,10 +45,14 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h3">First slide label - 2</Typography>
-								<Typography variant="h5">
-									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								<Typography variant="h2">TRACK THE BUS</Typography>
+								<br />
+								<br />
+								<Typography className="intro-pera" variant="h3">
+									Could not able to track the DIU-BUS is a major issue to <br /> our students and teachers at this point.
 								</Typography>
+								<br />
+								<br />
 								<Button
 									className="button-glass"
 									variant="outlined"
@@ -59,10 +67,14 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h3">First slide label - 3</Typography>
-								<Typography variant="h5">
-									Nulla vitae elit libero, a pharetra augue mollis interdum.
+								<Typography variant="h2">TRACK THE BUS</Typography>
+								<br />
+								<br />
+								<Typography className="intro-pera" variant="h3">
+									Could not able to track the DIU-BUS is a major issue to <br /> our students and teachers at this point.
 								</Typography>
+								<br />
+								<br />
 								<Button
 									className="button-glass"
 									variant="outlined"
