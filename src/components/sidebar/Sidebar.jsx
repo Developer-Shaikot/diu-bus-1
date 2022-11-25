@@ -20,6 +20,7 @@ import {
 	AllInbox,
 	GridView,
 	OtherHousesOutlined,
+	CurrencyExchange,
 } from "@mui/icons-material";
 
 import { NavLink } from "react-router-dom";
@@ -213,7 +214,7 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to="/inbox">
+				{/* <NavLink className={open ? "bar" : "bar shrink"} to="/inbox">
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -221,6 +222,21 @@ const Sidebar = ({ children }) => {
 							</ListItemIcon>
 							<p className={!open ? "pra-hidden pra mt-2 mb-1" : "pra mt-2 mb-1"}>
 								Inbox
+							</p>
+							<ListItemText />
+						</ListItem>
+					</List>
+
+					<Divider />
+				</NavLink> */}
+				<NavLink className={open ? "bar" : "bar shrink"} to="/bus-fare">
+					<List>
+						<ListItem>
+							<ListItemIcon>
+								<CurrencyExchange className="icon" />
+							</ListItemIcon>
+							<p className={!open ? "pra-hidden pra mt-2 mb-1" : "pra mt-2 mb-1"}>
+								Bus Fare
 							</p>
 							<ListItemText />
 						</ListItem>

@@ -2,44 +2,44 @@ import ScheduleTable from "../../components/bus-schedule/ScheduleTable";
 import Paper from "@mui/material/Paper";
 import { Chip, Divider, Grid, Typography } from "@mui/material";
 
-const Schedule = () => {
+const Schedule = ({ reasonFor = "Schedule" }) => {
 	return (
 		<Paper elevation={3} sx={{ p: 3 }}>
 			<Typography pb={3} variant="h4">
-				Schedule
+				{reasonFor}
 			</Typography>
-			<Divider textAlign="left" sx={{mb: 3}}>
-				<Chip label="Daffodil Transport Schedule" />
+			<Divider textAlign="left" sx={{ mb: 3 }}>
+				<Chip label={`Daffodil Transport - ${reasonFor}`} />
 			</Divider>
 			<Grid container spacing={3}>
 				<Grid item xs={12}>
 					<Grid item container spacing={3}>
 						<Grid item xs={6}>
-							<ScheduleTable type="DSC-DHANMONDI" />
+							<ScheduleTable type="DSC-DHANMONDI" reasonFor={reasonFor} />
 						</Grid>
 						<Grid item xs container spacing={3}>
 							<Grid item xs={12}>
-								<ScheduleTable type="DSC-UTTARA" />
+								<ScheduleTable type="DSC-UTTARA" reasonFor={reasonFor} />
 							</Grid>
 							<Grid item xs>
-								<ScheduleTable type="DSC-ECB" />
+								<ScheduleTable type="DSC-ECB" reasonFor={reasonFor} />
 							</Grid>
 						</Grid>
 					</Grid>
 				</Grid>
 				<Grid item xs={12} container spacing={3}>
 					<Grid item xs={12}>
-						<ScheduleTable type="Employee Bus" />
+						<ScheduleTable type="Employee Bus" reasonFor={reasonFor} />
 					</Grid>
 					<Grid item container spacing={3}>
 						<Grid item xs={4}>
-							<ScheduleTable type="DSC-RIVER GHAT" />
+							<ScheduleTable type="DSC-RIVER GHAT" reasonFor={reasonFor} />
 						</Grid>
 						<Grid item xs={4}>
-							<ScheduleTable type="DSC-TONGI COLLEGE GATE" />
+							<ScheduleTable type="DSC-TONGI COLLEGE GATE" reasonFor={reasonFor} />
 						</Grid>
 						<Grid item xs={4}>
-							<ScheduleTable type="DSC-BAIPAIL" />
+							<ScheduleTable type="DSC-BAIPAIL" reasonFor={reasonFor} />
 						</Grid>
 					</Grid>
 				</Grid>

@@ -10,12 +10,19 @@ import {
 import { useState } from "react";
 import ScheduleTableRow from "./ScheduleTableRow";
 import scheduleInformation from "../../components/JSON/Bus.json";
-import { AccessTime, DirectionsBus, LocationSearching, MyLocation } from "@mui/icons-material";
+import {
+	AccessTime,
+	DirectionsBus,
+	LocationSearching,
+	MyLocation,
+	Paid,
+} from "@mui/icons-material";
 
-const ScheduleTable = ({ type }) => {
+const ScheduleTable = ({ type, reasonFor }) => {
 	const [busesInfo, setBusesInfo] = useState([]);
 
 	const filterData = (filterBy) => {
+		// filtering data according to the bus_type and route
 		let filteredData = [];
 
 		if (isEmployeeOrOtherType()) {
@@ -54,7 +61,6 @@ const ScheduleTable = ({ type }) => {
 				sx={{
 					minWidth: 250,
 					width: "100%",
-
 					borderRadius: 4,
 					boxShadow:
 						"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
@@ -122,14 +128,27 @@ const ScheduleTable = ({ type }) => {
 									placeContent: "end",
 								}}
 							>
-								<AccessTime fontSize="small" /> Time
+								{reasonFor === "Schedule" ? (
+									<>
+										<AccessTime fontSize="small" /> Time
+									</>
+								) : (
+									<>
+										<Paid fontSize="small" /> Fare
+									</>
+								)}
 							</strong>
 						</TableCell>
 					</TableRow>
 				</TableHead>
 				<TableBody>
 					{busesInfo?.map((rowInfo, i) => (
-						<ScheduleTableRow key={i} rowInfo={rowInfo} type={type} />
+						<ScheduleTableRow
+							key={i}
+							rowInfo={rowInfo}
+							type={type}
+							reasonFor={reasonFor}
+						/>
 					))}
 				</TableBody>
 			</Table>
