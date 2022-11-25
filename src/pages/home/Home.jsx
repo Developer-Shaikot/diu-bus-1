@@ -15,8 +15,8 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h1">TRANSPORT</Typography>
-								<Typography className="intro-pera" variant="h2">
+								<Typography variant="h2">TRANSPORT</Typography>
+								<Typography className="intro-pera" variant="h3">
 									DIU-Transportation tracking is a major issue to our students.
 								</Typography>
 								<Button
