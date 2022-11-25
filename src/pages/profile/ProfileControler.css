@@ -1,33 +1,29 @@
-.button{
-    margin-left: 70%;
-    margin-bottom: 5%;
-    height: 50px
+.button {
+	margin-left: 70%;
+	margin-bottom: 5%;
+	height: 50px;
 }
-.AboutAlignment{
-  margin-top: 7%;
+.AboutAlignment {
+	margin-top: 7%;
 }
-.FooterAlignment{
-  margin-left: 30%;
-  margin-right: 20%;
+.FooterAlignment {
+	margin-left: 30%;
+	margin-right: 20%;
 }
-.pra{
-    font-family: 'Merriweather', serif;
-  }
 .editbutton {
-    text-decoration: none;
-    width: 20%;
-    color: white;
-    font-size: 20px;
-    text-align: center;
-    font-family: 'Merriweather', serif;
-  }
-  .About-logo {
-    height: 10vmin;
-    
-    pointer-events: none;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .About-logo {
-      animation: App-logo-spin infinite 20s linear;
-    }
-  }
+	text-decoration: none;
+	width: 20%;
+	color: white;
+	font-size: 20px;
+	text-align: center;
+}
+.About-logo {
+	height: 10vmin;
+
+	pointer-events: none;
+}
+@media (prefers-reduced-motion: no-preference) {
+	.About-logo {
+		animation: App-logo-spin infinite 20s linear;
+	}
+}
