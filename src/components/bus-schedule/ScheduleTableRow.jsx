@@ -1,8 +1,5 @@
 import { TableCell, TableRow } from "@mui/material";
 
-// bus fares
-const fares = [20, 25, 15];
-
 const ScheduleTableRow = ({ rowInfo, type, reasonFor }) => {
 	return (
 		<TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
@@ -22,7 +19,9 @@ const ScheduleTableRow = ({ rowInfo, type, reasonFor }) => {
 			<TableCell align="right">
 				{reasonFor === "Schedule"
 					? rowInfo.bus_time
-					: fares[Math.floor(Math.random() * 3)] + " tk"}
+					: type === "DSC-DHANMONDI"
+					? "25 tk"
+					: "20 tk"}
 			</TableCell>
 		</TableRow>
 	);
