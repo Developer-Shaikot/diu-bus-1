@@ -8,15 +8,23 @@ import StartIcon from "@mui/icons-material/Start";
 
 const Home = () => {
 	return (
-		<Paper className="bg" elevation={4} sx={{ borderRadius: "20px" }}>
+		<Paper
+			className="bg"
+			elevation={4}
+			sx={{
+				borderRadius: "20px",
+				height: "calc(100vh - 64px)",
+				minHeight: "500px",
+			}}
+		>
 			<div className="home">
-				<Carousel variant="light">
+				<Carousel variant="light" interval={null}>
 					<Carousel.Item className="overlay-container">
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h2">TRANSPORT</Typography>
-								<Typography className="intro-pera" variant="h3">
+								<Typography variant="h1">TRANSPORT</Typography>
+								<Typography className="intro-pera" variant="h2">
 									DIU-Transportation tracking is a major issue to our students.
 								</Typography>
 								<Button

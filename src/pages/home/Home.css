@@ -1,35 +1,34 @@
 .home {
 	font-size: 15px;
 	width: 100%;
+	height: 100%;
 	font-family: "Merriweather", serif;
 }
 
 .bg {
 	background-color: #f1f5f9;
-	/* Full height */
-	/* Center and scale the image nicely */
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
 	color: rgb(197, 197, 197);
 }
 
-.intro-pera{
-	text-align:center;
-    text-decoration: wavy;
+.intro-pera {
+	text-align: center;
+	text-decoration: wavy;
 	text-indent: 2%;
-    line-height: 200%;
-    margin-left: 50px;
-    margin-right: 50px;
+	line-height: 200%;
+	margin-left: 50px;
+	margin-right: 50px;
 }
 
 .caruselImg {
 	width: 100%;
-	height: 1000px;
+	height: calc(100vh - 40px);
 	opacity: 0.9;
 	border-image-outset: 2px 2px 4px #ffffff;
 	border-radius: 20px;
-	
+	object-fit: cover;
 }
 
 .overlay-container {
@@ -47,25 +46,27 @@
 	flex-direction: column;
 	top: 0;
 	left: 0;
-	background-color: rgba(1, 54, 124, 0.833);
+	background-color: rgb(0 49 149 / 83%);
 	border-radius: 20px;
 }
 
-.overlay h3, .overlay h5 {
+.overlay h3,
+.overlay h3 {
 	color: whitesmoke;
 }
 
-.overlay h5 {
+.overlay h3 {
 	margin-top: 10px;
 }
 
 .overlay .button-glass {
-	margin-top: 20px;
-	background-color: rgba(0, 255, 255, 0.123);
+	margin-top: 30px;
+	background-color: #ffffff24;
 	border: 2px solid #f4f4f4;
 	border-radius: 50px;
 	padding: 10px 20px;
 	color: #fafeff;
+	animation: shadow-pulse 3s infinite;
 }
 
 .overlay .button-glass:hover {
@@ -76,4 +77,31 @@
 
 .carousel-caption {
 	position: static;
+	width: calc(100% - 30px);
+}
+.caption-container {
+	margin: auto;
+	width: 80%;
+}
+.home .carousel {
+	height: 100% !important;
+}
+.carousel-inner {
+	height: 100%;
+	min-height: 500px;
+	border-radius: 20px;
+}
+
+.shadow-head {
+	-webkit-text-stroke: 1px #f8f8f8;
+	text-shadow: 0px 2px 3px #000000;
+}
+
+@keyframes shadow-pulse {
+	0% {
+		box-shadow: 0 0 0 0px rgba(204, 204, 204, 0.88);
+	}
+	100% {
+		box-shadow: 0 0 0 7px rgba(212, 212, 212, 0.426);
+	}
 }
