@@ -5,6 +5,8 @@ import Inbox from "../pages/inbox/Inbox";
 import Error from "../pages/error/Error";
 import Transport from "../pages/transport/Transport";
 import Schedule from "../pages/schedule/Schedule";
+import BusFare from "../pages/bus-fare/BusFare";
+import ProfileControler from "../pages/profile/ProfileControler";
 
 const Routers = () => {
 	return (
