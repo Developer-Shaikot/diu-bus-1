@@ -8,7 +8,13 @@ const Schedule = () => {
 			<Typography pb={3} variant="h4">
 				Schedule
 			</Typography>
-			<ScheduleTable />
+			<ScheduleTable type="DSC-DHANMONDI" />
+			<ScheduleTable type="DSC-UTTARA" />
+			<ScheduleTable type="DSC-ECB" />
+			<ScheduleTable type="DSC-TONGI COLLEGE GATE" />
+			<ScheduleTable type="DSC-BAIPAIL" />
+			<ScheduleTable type="DSC-RIVER GHAT" />
+			<ScheduleTable type="Employee Bus" />
 		</Paper>
 	);
 };
