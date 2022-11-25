@@ -15,7 +15,12 @@ const Transport = () => {
 					key={i}
 					busName={busInfo.bus_name}
 					busImg={busInfo.picture}
-					about={busInfo.about}
+					about={{
+						driver: busInfo.driver_name,
+						driverContact: busInfo.driver_contact_no,
+						contractor: busInfo.Contactor_name,
+						contractorContact: busInfo.Contactor_contact_no,
+					}}
 					busNumber={busInfo.bus_number}
 					routeUrl={busInfo.url}
 				/>
