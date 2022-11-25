@@ -46,7 +46,7 @@
 	flex-direction: column;
 	top: 0;
 	left: 0;
-	background-color: rgba(1, 54, 124, 0.833);
+	background-color: rgb(0 49 149 / 83%);
 	border-radius: 20px;
 }
 
@@ -60,12 +60,13 @@
 }
 
 .overlay .button-glass {
-	margin-top: 20px;
-	background-color: rgba(0, 255, 255, 0.123);
+	margin-top: 30px;
+	background-color: #ffffff24;
 	border: 2px solid #f4f4f4;
 	border-radius: 50px;
 	padding: 10px 20px;
 	color: #fafeff;
+	animation: shadow-pulse 3s infinite;
 }
 
 .overlay .button-glass:hover {
@@ -89,4 +90,18 @@
 	height: 100%;
 	min-height: 500px;
 	border-radius: 20px;
+}
+
+.shadow-head {
+	-webkit-text-stroke: 1px #f8f8f8;
+	text-shadow: 0px 2px 3px #000000;
+}
+
+@keyframes shadow-pulse {
+	0% {
+		box-shadow: 0 0 0 0px rgba(204, 204, 204, 0.88);
+	}
+	100% {
+		box-shadow: 0 0 0 7px rgba(212, 212, 212, 0.426);
+	}
 }
