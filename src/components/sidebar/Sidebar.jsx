@@ -168,7 +168,7 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/points`}>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/profile">
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -183,7 +183,7 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/rawview`}>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/schedule">
 					<List>
 						<ListItem>
 							<ListItemIcon>
@@ -228,7 +228,7 @@ const Sidebar = ({ children }) => {
 
 					<Divider />
 				</NavLink>
-				<NavLink className={open ? "bar" : "bar shrink"} to={`/message`}>
+				<NavLink className={open ? "bar" : "bar shrink"} to="/contact">
 					<List>
 						<ListItem>
 							<ListItemIcon>
