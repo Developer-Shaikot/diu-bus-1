@@ -24,7 +24,9 @@ const Home = () => {
 						<Box className="overlay">
 							<Carousel.Caption>
 								<Box className="caption-container">
-									<Typography variant="h2">TRANSPORT</Typography>
+									<Typography variant="h2" className="shadow-head">
+										TRANSPORT
+									</Typography>
 									<Typography className="intro-pera" variant="h3">
 										DIU-Transportation tracking is a major issue to our
 										students.
