@@ -23,22 +23,17 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Box className="caption-container">
-									<Typography variant="h2" className="shadow-head">
-										TRANSPORT
-									</Typography>
-									<Typography className="intro-pera" variant="h3">
-										DIU-Transportation tracking is a major issue to our
-										students.
-									</Typography>
-									<Button
-										className="button-glass"
-										variant="outlined"
-										endIcon={<StartIcon />}
-									>
-										Get Start
-									</Button>
-								</Box>
+								<Typography variant="h2">TRANSPORT</Typography>
+								<Typography className="intro-pera" variant="h3">
+									DIU-Transportation tracking is a major issue to our students.
+								</Typography>
+								<Button
+									className="button-glass"
+									variant="outlined"
+									endIcon={<StartIcon />}
+								>
+									Get Start
+								</Button>
 							</Carousel.Caption>
 						</Box>
 					</Carousel.Item>

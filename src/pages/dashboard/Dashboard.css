@@ -1,0 +1,15 @@
+.d-board {
+    text-align: center;
+    /* margin-top: 150px; */
+    margin: 50%;
+
+    font-family: "Merriweather", serif;
+  }
+.d-title{
+    color: aliceblue;
+}
+ 
+.error{
+  color: red;
+}
+ 
