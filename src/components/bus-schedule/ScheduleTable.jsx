@@ -38,8 +38,6 @@ const ScheduleTable = ({ type }) => {
 		setBusesInfo(filterData(type));
 	}, []);
 
-	console.log(scheduleInformation);
-
 	return (
 		<TableContainer
 			component={Paper}
