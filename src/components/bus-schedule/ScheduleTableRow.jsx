@@ -1,6 +1,9 @@
 import { TableCell, TableRow } from "@mui/material";
 
-const ScheduleTableRow = ({ rowInfo, type }) => {
+// bus fares
+const fares = [20, 25, 15];
+
+const ScheduleTableRow = ({ rowInfo, type, reasonFor }) => {
 	return (
 		<TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
 			<TableCell component="th" scope="row">
@@ -16,7 +19,11 @@ const ScheduleTableRow = ({ rowInfo, type }) => {
 					</TableCell>
 				</>
 			)}
-			<TableCell align="right">{rowInfo.bus_time}</TableCell>
+			<TableCell align="right">
+				{reasonFor === "Schedule"
+					? rowInfo.bus_time
+					: fares[Math.floor(Math.random() * 3)] + " tk"}
+			</TableCell>
 		</TableRow>
 	);
 };
