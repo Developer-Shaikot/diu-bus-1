@@ -46,13 +46,16 @@ const ScheduleTable = ({ type }) => {
 			sx={{
 				p: 2,
 				borderRadius: 4,
+				height: "100%",
 				boxShadow:
 					"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
 			}}
 		>
 			<Table
 				sx={{
-					minWidth: 650,
+					minWidth: 250,
+					width: "100%",
+
 					borderRadius: 4,
 					boxShadow:
 						"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
