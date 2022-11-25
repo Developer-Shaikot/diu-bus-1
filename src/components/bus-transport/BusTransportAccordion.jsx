@@ -11,23 +11,35 @@ import {
 	Typography,
 	Button,
 } from "@mui/material";
-
+import { useState } from "react";
 
 const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) => {
+	const [expandState, setExpandState] = useState(busNumber === 1 ? true : false);
+
+	const handleExpand = () => {
+		setExpandState((prev) => !prev);
+	};
+
 	return (
-		<Accordion elevation={2}>
+		<Accordion
+			elevation={2}
+			onClick={handleExpand}
+			expanded={expandState}
+			TransitionProps={{ unmountOnExit: true }}
+		>
 			<AccordionSummary
 				expandIcon={<ExpandMore />}
 				aria-controls="panel1a-content"
 				id="panel1a-header"
 			>
-				<Stack justifyContent="space-between"
+				<Stack
+					justifyContent="space-between"
 					direction="row"
 					width="100%"
 					sx={{
-						padding: "1%"
-						
-					}}>
+						padding: "1%",
+					}}
+				>
 					<Box>
 						<Typography variant="h6">{busName}</Typography>
 						<Typography variant="body2">Bus No.{busNumber}</Typography>
