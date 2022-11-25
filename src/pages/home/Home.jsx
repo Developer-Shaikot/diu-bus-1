@@ -23,9 +23,9 @@ const Home = () => {
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
 							<Carousel.Caption>
-								<Typography variant="h2">TRANSPORT</Typography>
+								<Typography variant="h2">TRACK THE BUS</Typography>
 								<Typography className="intro-pera" variant="h3">
-									DIU-Transportation tracking is a major issue to our students.
+									Could not able to track the DIU-BUS is a major issue to our students and teachers at this point.
 								</Typography>
 								<Button
 									className="button-glass"

@@ -26,7 +26,7 @@ import {
 import { NavLink } from "react-router-dom";
 
 import logo from "../../assets/images/main.png";
-import img from "../../assets/images/TRANSPORT.png";
+import img from "../../assets/images/MainLogo.png";
 import "./Sidebar.css";
 import Navbar from "../navbar/Navbar";
 

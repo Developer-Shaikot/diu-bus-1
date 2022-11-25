@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { Button } from 'react-bootstrap';
 import StartIcon from "@mui/icons-material/Start";
+import Footer from "../../components/footer/Footer";
 
 
 const Dashboard = () => {
@@ -122,6 +123,7 @@ const Dashboard = () => {
                 <p style={{ color: "red" }}>{watch.error}</p>
                 {watch.success && <p style={{ color: "green" }}>User successfully</p>}
             </form>
+            <Footer/>
         </div>
     );
 };

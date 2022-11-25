@@ -7,6 +7,7 @@ import Transport from "../pages/transport/Transport";
 import Schedule from "../pages/schedule/Schedule";
 import BusFare from "../pages/bus-fare/BusFare";
 import ProfileControler from "../pages/profile/ProfileControler";
+import Contact from "../pages/contact/Contact";
 
 const Routers = () => {
 	return (
@@ -17,6 +18,7 @@ const Routers = () => {
 			<Route path="/schedule" element={<Schedule />} />
 			<Route path="/bus-fare" element={<BusFare />} />
 			<Route path="/inbox" element={<Inbox />} />
+			<Route path="/contact" element={<Contact />} />
 			<Route path="/profile" element={<ProfileControler />} />
 			<Route path="*" element={<Error />} />
 		</Routes>
