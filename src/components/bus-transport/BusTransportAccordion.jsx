@@ -9,7 +9,9 @@ import {
 	Grid,
 	Stack,
 	Typography,
+	Button,
 } from "@mui/material";
+
 
 const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) => {
 	return (
@@ -19,9 +21,18 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 				aria-controls="panel1a-content"
 				id="panel1a-header"
 			>
-				<Stack>
-					<Typography variant="h6">{busName}</Typography>
-					<Typography variant="body2">Bus No.{busNumber}</Typography>
+				<Stack justifyContent="space-between"
+					direction="row"
+					width="100%"
+					sx={{
+						padding: "1%"
+						
+					}}>
+					<Box>
+						<Typography variant="h6">{busName}</Typography>
+						<Typography variant="body2">Bus No.{busNumber}</Typography>
+					</Box>
+					<Button variant="contained">Track The Bus</Button>
 				</Stack>
 			</AccordionSummary>
 			<AccordionDetails sx={{ px: 3 }}>

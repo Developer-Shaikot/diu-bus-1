@@ -110,7 +110,6 @@ const Dashboard = () => {
                     <textarea className="form-control mt-1"
                         placeholder="Write your content...."
                         {...register("content", { required: true })}
-                        className="form-control"
                         name="content"
                         rows="5"
                         id="content"
