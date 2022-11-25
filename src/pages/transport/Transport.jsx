@@ -10,9 +10,9 @@ const Transport = () => {
 				Transport
 			</Typography>
 			<Divider sx={{ mb: 2 }} />
-			{transportInfo.map((busInfo) => (
+			{transportInfo.map((busInfo, i) => (
 				<BusTransportAccordion
-					key={busInfo._id}
+					key={i}
 					busName={busInfo.bus_name}
 					busImg={busInfo.picture}
 					about={busInfo.about}

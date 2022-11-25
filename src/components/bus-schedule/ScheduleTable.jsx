@@ -10,6 +10,7 @@ import {
 import { useState } from "react";
 import ScheduleTableRow from "./ScheduleTableRow";
 import scheduleInformation from "../../components/JSON/Bus.json";
+import { AccessTime, DirectionsBus, LocationSearching, MyLocation } from "@mui/icons-material";
 
 const ScheduleTable = ({ type }) => {
 	const [busesInfo, setBusesInfo] = useState([]);
@@ -66,25 +67,63 @@ const ScheduleTable = ({ type }) => {
 							colSpan={type === "Employee Bus" || type === "Other Bus" ? 4 : 2}
 							align="center"
 						>
-							{type}
+							<strong>{type}</strong>
 						</TableCell>
 					</TableRow>
 					<TableRow>
 						<TableCell component="th" scope="row">
-							Bus Name
+							<strong
+								style={{
+									display: "flex",
+									alignItems: "center",
+									gap: "3px",
+									placeContent: "start",
+								}}
+							>
+								<DirectionsBus fontSize="small" /> Bus Name
+							</strong>
 						</TableCell>
 						{(type === "Employee Bus" || type === "Other Bus") && (
 							<>
 								<TableCell component="th" scope="row" align="left">
-									From
+									<strong
+										style={{
+											display: "flex",
+											alignItems: "center",
+											gap: "3px",
+											placeContent: "start",
+										}}
+									>
+										<LocationSearching fontSize="small" />
+										From
+									</strong>
 								</TableCell>
 								<TableCell component="th" scope="row" align="left">
-									To
+									<strong
+										style={{
+											display: "flex",
+											alignItems: "center",
+											gap: "3px",
+											placeContent: "start",
+										}}
+									>
+										<MyLocation fontSize="small" />
+										To
+									</strong>
 								</TableCell>
 							</>
 						)}
 						<TableCell component="th" scope="row" align="right">
-							Time
+							<strong
+								style={{
+									display: "flex",
+									alignItems: "center",
+									gap: "3px",
+									placeContent: "end",
+								}}
+							>
+								<AccessTime fontSize="small" /> Time
+							</strong>
 						</TableCell>
 					</TableRow>
 				</TableHead>
