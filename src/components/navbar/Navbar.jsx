@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { AppBar, Box, IconButton, Stack, Toolbar, Typography } from "@mui/material";
+import { AppBar, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { ChevronRight, Inbox, Menu, NotificationsNone } from "@mui/icons-material";
 import Profile from "../sidebar/Profile";
 import { useLocation } from "react-router-dom";

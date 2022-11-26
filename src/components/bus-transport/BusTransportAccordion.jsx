@@ -104,6 +104,7 @@ const BusTransportAccordion = () => {
 							height={500}
 							src={busInfo.routeUrl}
 							frameBorder="0"
+							title={busInfo.busNumber}
 						></iframe>
 					</Box>
 				</AccordionDetails>
@@ -118,6 +119,7 @@ const BusTransportAccordion = () => {
 					allowFullScreen
 					loading="lazy"
 					referrerPolicy="no-referrer-when-downgrade"
+					title={busInfo.busNumber}
 				></iframe>
 			</ModalComponent>
 		</>

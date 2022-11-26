@@ -17,6 +17,7 @@ const Dashboard = () => {
     const [imageURL, setImageURL] = useState(null);
 
     const onSubmit = (data) => {
+        console.info(imageURL);
     	const blogData = {
     		title: data.title,
     		date: data.date,

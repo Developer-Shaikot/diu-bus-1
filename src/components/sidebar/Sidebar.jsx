@@ -1,4 +1,4 @@
-import { styled, useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import { useState } from "react";
 import {
 	Box,
@@ -17,7 +17,6 @@ import {
 	ContactPhone,
 	BusAlert,
 	AccountBox,
-	AllInbox,
 	GridView,
 	OtherHousesOutlined,
 	CurrencyExchange,
@@ -97,7 +96,6 @@ const Sidebar = ({ children }) => {
 				PaperProps={{
 					sx: {
 						backgroundColor: "#082268",
-						background: "rgb(8,34,104)",
 						background:
 							"linear-gradient(25deg, rgba(8,34,104,1) 34%, rgba(0,25,95,1) 94%)",
 					},
