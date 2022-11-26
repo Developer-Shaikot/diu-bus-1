@@ -1,4 +1,4 @@
-import { Box, Modal} from "@mui/material";
+import { Box, Modal } from "@mui/material";
 
 const style = {
 	position: "absolute",
@@ -13,7 +13,7 @@ const style = {
 	borderRadius: 3,
 };
 
-const ModalComponent = ({open, handleClose, content}) => {
+const ModalComponent = ({ open, handleClose, children }) => {
 	return (
 		<Modal
 			open={open}
@@ -21,9 +21,7 @@ const ModalComponent = ({open, handleClose, content}) => {
 			aria-labelledby="modal-modal-title"
 			aria-describedby="modal-modal-description"
 		>
-			<Box sx={style}>
-				{content}
-			</Box>
+			<Box sx={style}>{children}</Box>
 		</Modal>
 	);
 };

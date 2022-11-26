@@ -11,12 +11,14 @@ import {
 	Typography,
 	Button,
 } from "@mui/material";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { TransportContext } from "../../contexts/TransportContext";
 import ModalComponent from "../modal/ModalComponent";
 import BusAbout from "./BusAbout";
 
-const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) => {
-	const [expandState, setExpandState] = useState(busNumber === 1 ? true : false);
+const BusTransportAccordion = () => {
+	const busInfo = useContext(TransportContext);
+	const [expandState, setExpandState] = useState(busInfo.busNumber === 1 ? true : false);
 	const [modalOpen, setModalOpen] = useState(false);
 
 	const handleClose = () => {
@@ -28,7 +30,7 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 	};
 
 	const preserveAccordionState = () => {
-		setExpandState((prev) => !prev);
+		handleExpand();
 		setModalOpen(true);
 	};
 
@@ -36,7 +38,6 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 		<>
 			<Accordion
 				elevation={2}
-				onClick={handleExpand}
 				expanded={expandState}
 				TransitionProps={{ unmountOnExit: true }}
 			>
@@ -44,6 +45,7 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 					expandIcon={<ExpandMore />}
 					aria-controls="panel1a-content"
 					id="panel1a-header"
+					onClick={handleExpand}
 				>
 					<Stack
 						justifyContent="space-between"
@@ -55,8 +57,8 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 						}}
 					>
 						<Box>
-							<Typography variant="h6">{busName}</Typography>
-							<Typography variant="body2">Bus No.{busNumber}</Typography>
+							<Typography variant="h6">{busInfo.busName}</Typography>
+							<Typography variant="body2">Bus No.{busInfo.busNumber}</Typography>
 						</Box>
 						<Button
 							sx={{ height: "33px", borderRadius: "10px" }}
@@ -80,7 +82,7 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 										borderRadius: "7px",
 										objectFit: "cover",
 									}}
-									src={busImg}
+									src={busInfo.busImg}
 									alt="diu_bus_img"
 								/>
 							</Box>
@@ -88,12 +90,7 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 						<Grid item xs>
 							<Box p={2} height="100%" border="1px solid #d9d9d9" borderRadius={4}>
 								{/* add bus about table */}
-								<BusAbout
-									driverName={about.driver}
-									driverContactNo={about.driverContact}
-									contractorName={about.contractor}
-									contractorContactNo={about.contractorContact}
-								/>
+								<BusAbout />
 							</Box>
 						</Grid>
 					</Grid>
@@ -105,28 +102,24 @@ const BusTransportAccordion = ({ busName, busImg, about, busNumber, routeUrl }) 
 							style={{ borderRadius: "7px" }}
 							width="100%"
 							height={500}
-							src={routeUrl}
+							src={busInfo.routeUrl}
 							frameBorder="0"
 						></iframe>
 					</Box>
 				</AccordionDetails>
 			</Accordion>
 			{/* modal component */}
-			<ModalComponent
-				open={modalOpen}
-				handleClose={handleClose}
-				content={
-					<iframe
-						src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1824.1888607753697!2d90.31750917475618!3d23.876221098675813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c3c274c81d6f%3A0x3206e05b80e7c296!2sDIU%20Transport%20Parking%20-%202!5e0!3m2!1sen!2sbd!4v1669408417096!5m2!1sen!2sbd"
-						width="100%"
-						height="450"
-						style={{ border: 0 }}
-						allowFullScreen
-						loading="lazy"
-						referrerPolicy="no-referrer-when-downgrade"
-					></iframe>
-				}
-			/>
+			<ModalComponent open={modalOpen} handleClose={handleClose}>
+				<iframe
+					src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1824.1888607753697!2d90.31750917475618!3d23.876221098675813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c3c274c81d6f%3A0x3206e05b80e7c296!2sDIU%20Transport%20Parking%20-%202!5e0!3m2!1sen!2sbd!4v1669408417096!5m2!1sen!2sbd"
+					width="100%"
+					height="450"
+					style={{ border: 0 }}
+					allowFullScreen
+					loading="lazy"
+					referrerPolicy="no-referrer-when-downgrade"
+				></iframe>
+			</ModalComponent>
 		</>
 	);
 };

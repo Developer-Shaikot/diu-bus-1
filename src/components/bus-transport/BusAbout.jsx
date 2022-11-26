@@ -7,8 +7,12 @@ import {
 	TableHead,
 	TableRow,
 } from "@mui/material";
+import { useContext } from "react";
+import { TransportContext } from "../../contexts/TransportContext";
 
-const BusAbout = ({driverName, driverContactNo, contractorName, contractorContactNo}) => {
+const BusAbout = () => {
+	const busInfo = useContext(TransportContext);
+
 	return (
 		<TableContainer component={Paper}>
 			<Table sx={{ minWidth: 150, width: "100%" }} aria-label="simple table">
@@ -27,25 +31,25 @@ const BusAbout = ({driverName, driverContactNo, contractorName, contractorContac
 						<TableCell component="th" scope="row">
 							Driver Name
 						</TableCell>
-						<TableCell align="right">{driverName}</TableCell>
+						<TableCell align="right">{busInfo.driver}</TableCell>
 					</TableRow>
 					<TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
 						<TableCell component="th" scope="row">
 							Driver Contact No.
 						</TableCell>
-						<TableCell align="right">{driverContactNo}</TableCell>
+						<TableCell align="right">{busInfo.driverContact}</TableCell>
 					</TableRow>
 					<TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
 						<TableCell component="th" scope="row">
 							Contractor Name
 						</TableCell>
-						<TableCell align="right">{contractorName}</TableCell>
+						<TableCell align="right">{busInfo.contractor}</TableCell>
 					</TableRow>
 					<TableRow sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
 						<TableCell component="th" scope="row">
 							Contractor Contact No.
 						</TableCell>
-						<TableCell align="right">{contractorContactNo}</TableCell>
+						<TableCell align="right">{busInfo.contractorContact}</TableCell>
 					</TableRow>
 				</TableBody>
 			</Table>

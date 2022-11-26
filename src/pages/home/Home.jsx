@@ -1,10 +1,10 @@
 import "./Home.css";
 import Carousel from "react-bootstrap/Carousel";
 import firstImg from "../../assets/images/diu-trans.jpg";
-import secondImg from "./../../assets/images/DIUTransport.jpg";
-import thirdImg from "./../../assets/images/DiuTrNSPORT.jpg";
-import { Box, Button, Paper, Typography } from "@mui/material";
-import StartIcon from "@mui/icons-material/Start";
+import secondImg from "./../../assets/images/diu-transport-2.jpg";
+import thirdImg from "./../../assets/images/slider-3.png";
+import { Box, Paper } from "@mui/material";
+import CarouselCaption from "../../components/carousel/CarouselCaption";
 
 const Home = () => {
 	return (
@@ -22,67 +22,31 @@ const Home = () => {
 					<Carousel.Item className="overlay-container">
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
-							<Carousel.Caption>
-								<Typography variant="h2">TRACK THE BUS</Typography>
-								<br />
-								<br />
-								<Typography className="intro-pera" variant="h3">
-									Could not able to track the DIU-BUS is a major issue to <br /> our students and teachers at this point.
-								</Typography>
-								<br />
-								<br />
-								<Button
-									className="button-glass"
-									variant="outlined"
-									endIcon={<StartIcon />}
-								>
-									Get Start
-								</Button>
-							</Carousel.Caption>
+							{/* carousel caption component */}
+							<CarouselCaption
+								heading="TRACK THE BUS"
+								description="Could not able to track the DIU-BUS is a major issue to our students and teachers at this point."
+							/>
 						</Box>
 					</Carousel.Item>
 					<Carousel.Item className="overlay-container">
-						<img className="caruselImg" src={secondImg} alt="First slide" />
+						<img className="caruselImg" src={secondImg} alt="second slide" />
 						<Box className="overlay">
-							<Carousel.Caption>
-								<Typography variant="h2">TRACK THE BUS</Typography>
-								<br />
-								<br />
-								<Typography className="intro-pera" variant="h3">
-									See the location of buses and also watch the bus fare as well.
-								</Typography>
-								<br />
-								<br />
-								<Button
-									className="button-glass"
-									variant="outlined"
-									endIcon={<StartIcon />}
-								>
-									Get Start
-								</Button>
-							</Carousel.Caption>
+							{/* carousel caption component */}
+							<CarouselCaption
+								heading="TRACK THE BUS"
+								description="Could not able to track the DIU-BUS is a major issue to our students and teachers at this point."
+							/>
 						</Box>
 					</Carousel.Item>
 					<Carousel.Item className="overlay-container">
-						<img className="caruselImg" src={thirdImg} alt="First slide" />
+						<img className="caruselImg" src={thirdImg} alt="third slide" />
 						<Box className="overlay">
-							<Carousel.Caption>
-								<Typography variant="h2">TRACK THE BUS</Typography>
-								<br />
-								<br />
-								<Typography className="intro-pera" variant="h3">
-									Information of bus driver & helper as wll as user can see the transport schedule.
-								</Typography>
-								<br />
-								<br />
-								<Button
-									className="button-glass"
-									variant="outlined"
-									endIcon={<StartIcon />}
-								>
-									Get Start
-								</Button>
-							</Carousel.Caption>
+							{/* carousel caption component */}
+							<CarouselCaption
+								heading="TRACK THE BUS"
+								description="Could not able to track the DIU-BUS is a major issue to our students and teachers at this point."
+							/>
 						</Box>
 					</Carousel.Item>
 				</Carousel>
