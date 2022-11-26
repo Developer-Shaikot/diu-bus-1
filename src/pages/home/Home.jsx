@@ -18,7 +18,7 @@ const Home = () => {
 			}}
 		>
 			<div className="home">
-				<Carousel variant="light" interval={null}>
+				<Carousel variant="light">
 					<Carousel.Item className="overlay-container">
 						<img className="caruselImg" src={firstImg} alt="First slide" />
 						<Box className="overlay">
