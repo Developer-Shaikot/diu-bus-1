@@ -35,7 +35,7 @@ const Home = () => {
 							{/* carousel caption component */}
 							<CarouselCaption
 								heading="TRACK THE BUS"
-								description="Could not able to track the DIU-BUS is a major issue to our students and teachers at this point."
+								description="See the location of buses and also watch the bus fare as well."
 							/>
 						</Box>
 					</Carousel.Item>
@@ -45,7 +45,7 @@ const Home = () => {
 							{/* carousel caption component */}
 							<CarouselCaption
 								heading="TRACK THE BUS"
-								description="Could not able to track the DIU-BUS is a major issue to our students and teachers at this point."
+								description="Information of bus driver & helper as wll as user can see the transport schedule."
 							/>
 						</Box>
 					</Carousel.Item>
