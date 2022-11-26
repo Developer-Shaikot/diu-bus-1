@@ -18,7 +18,6 @@ const ProfileControler = () => {
             <h3 className="p-title p-3">Admin Information<StartIcon className="m-2" /></h3>
             <div className="container row d-flex">
                 <div className="col-md-5 AboutAlignment">
-                    <h3 className="pra text-white mr-5"></h3>
                     <img style={{ width: '250px', marginTop: '20px', marginLeft: '15%', border: '3px solid cyan', borderRadius: '1px' }} src={img} alt="" />
                 </div>
                 <div className="pra col-md-5 text-light AboutAlignment ml-5">
