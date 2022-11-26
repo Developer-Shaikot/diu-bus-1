@@ -15,14 +15,10 @@
 
 .intro-pera {
 	text-align: center;
-	text-decoration: wavy;
-	font-size: large;
-	font-style: initial;
-	font-weight: 700;
+	font-size: 22px;
+	font-weight: 300;
 	text-indent: 2%;
-	line-height: 300%;
-	margin-left: 50px;
-	margin-right: 50px;
+	margin: 30px 50px 20px 50px;
 }
 
 .caruselImg {
@@ -80,7 +76,7 @@
 
 .carousel-caption {
 	position: static;
-	width: calc(100% - 30px);
+	width: calc(100% - 240px);
 }
 .caption-container {
 	margin: auto;
