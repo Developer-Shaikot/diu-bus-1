@@ -1,3 +1,4 @@
+import "./Navbar.css";
 import { styled } from "@mui/material/styles";
 import { AppBar, IconButton, Stack, Toolbar, Typography } from "@mui/material";
 import { ChevronRight, Inbox, Menu, NotificationsNone } from "@mui/icons-material";
@@ -42,6 +43,7 @@ const Navbar = ({ open, handleDrawerOpen }) => {
 					aria-label="open drawer"
 					onClick={handleDrawerOpen}
 					edge="start"
+					className="sidebar-reveal-btn"
 					sx={{
 						Color: "white",
 						marginRight: 5,
@@ -64,7 +66,7 @@ const Navbar = ({ open, handleDrawerOpen }) => {
 					</Typography>
 					<Stack direction="row" alignItems="center">
 						<SearchBox />
-						<Stack direction="row" gap={2} px={2}>
+						<Stack className="sm-remove" direction="row" gap={2} px={2}>
 							<Inbox />
 							<NotificationsNone />
 						</Stack>

@@ -65,7 +65,9 @@ const BusTransportAccordion = () => {
 							variant="contained"
 							onClick={preserveAccordionState}
 						>
-							<small>Track The Bus</small>
+							<small>
+								Track <span className="sm-remove"> The Bus</span>
+							</small>
 						</Button>
 					</Stack>
 				</AccordionSummary>

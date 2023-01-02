@@ -1,3 +1,15 @@
 .main-nav {
 	background-color: rgb(1, 26, 95);
 }
+
+@media (max-width: 820px) {
+	.sidebar-reveal-btn {
+		display: none !important;
+	}
+}
+
+@media (max-width: 580px) {
+	.sm-remove {
+		display: none !important;
+	}
+}

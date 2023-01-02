@@ -1,5 +1,5 @@
 import { styled } from "@mui/material/styles";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
 	Box,
 	Drawer,
@@ -78,6 +78,25 @@ const DrawerComp = styled(Drawer, { shouldForwardProp: (prop) => prop !== "open"
 const Sidebar = ({ children }) => {
 	// const theme = useTheme();
 	const [open, setOpen] = useState(true);
+
+	const [width, setWidth] = useState(window.innerWidth);
+	const [height, setHeight] = useState(window.innerHeight);
+
+	const updateDimensions = () => {
+		setWidth(window.innerWidth);
+		setHeight(window.innerHeight);
+	};
+
+	useEffect(() => {
+		window.addEventListener("resize", updateDimensions);
+		return () => window.removeEventListener("resize", updateDimensions);
+	}, []);
+
+	useEffect(() => {
+		if (width < 821) {
+			handleDrawerClose();
+		}
+	}, [width, height]);
 
 	const handleDrawerOpen = () => {
 		setOpen(true);

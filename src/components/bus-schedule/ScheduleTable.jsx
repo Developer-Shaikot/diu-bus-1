@@ -5,6 +5,7 @@ import {
 	TableCell,
 	TableContainer,
 	TableHead,
+	Box,
 	TableRow,
 } from "@mui/material";
 import { useState } from "react";
@@ -50,6 +51,7 @@ const ScheduleTable = ({ type, reasonFor }) => {
 		<TableContainer
 			component={Paper}
 			sx={{
+				overflow: "auto",
 				p: 2,
 				borderRadius: 4,
 				height: "100%",
@@ -57,41 +59,37 @@ const ScheduleTable = ({ type, reasonFor }) => {
 					"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
 			}}
 		>
-			<Table
-				sx={{
-					minWidth: 250,
-					width: "100%",
-					borderRadius: 4,
-					boxShadow:
-						"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
-				}}
-				aria-label="schedule-table"
-			>
-				<TableHead>
-					<TableRow>
-						<TableCell
-							colSpan={type === "Employee Bus" || type === "Other Bus" ? 4 : 2}
-							align="center"
-						>
-							<strong>{type}</strong>
-						</TableCell>
-					</TableRow>
-					<TableRow>
-						<TableCell component="th" scope="row">
-							<strong
-								style={{
-									display: "flex",
-									alignItems: "center",
-									gap: "3px",
-									placeContent: "start",
-								}}
-							>
-								<DirectionsBus fontSize="small" /> Bus Name
-							</strong>
-						</TableCell>
-						{(type === "Employee Bus" || type === "Other Bus") && (
-							<>
-								<TableCell component="th" scope="row" align="left">
+			<Box sx={{ overflow: "auto" }}>
+				<Box
+					sx={{
+						width: "100%",
+						display: "table",
+						tableLayout: "fixed",
+					}}
+				>
+					<Table
+						className="responsive-table"
+						sx={{
+							minWidth: 250,
+							borderRadius: 4,
+							// boxShadow:
+							// 	"0px 3px 3px -2px rgba(0,0,0,0.2),0px 3px 4px 0px rgba(0,0,0,0.14),0px 1px 8px 0px rgba(0,0,0,0.12)",
+						}}
+						aria-label="schedule-table"
+					>
+						<TableHead>
+							<TableRow>
+								<TableCell
+									colSpan={
+										type === "Employee Bus" || type === "Other Bus" ? 4 : 2
+									}
+									align="center"
+								>
+									<strong>{type}</strong>
+								</TableCell>
+							</TableRow>
+							<TableRow>
+								<TableCell component="th" scope="row">
 									<strong
 										style={{
 											display: "flex",
@@ -100,58 +98,74 @@ const ScheduleTable = ({ type, reasonFor }) => {
 											placeContent: "start",
 										}}
 									>
-										<LocationSearching fontSize="small" />
-										From
+										<DirectionsBus fontSize="small" /> Bus Name
 									</strong>
 								</TableCell>
-								<TableCell component="th" scope="row" align="left">
-									<strong
-										style={{
-											display: "flex",
-											alignItems: "center",
-											gap: "3px",
-											placeContent: "start",
-										}}
-									>
-										<MyLocation fontSize="small" />
-										To
-									</strong>
-								</TableCell>
-							</>
-						)}
-						<TableCell component="th" scope="row" align="right">
-							<strong
-								style={{
-									display: "flex",
-									alignItems: "center",
-									gap: "3px",
-									placeContent: "end",
-								}}
-							>
-								{reasonFor === "Schedule" ? (
+								{(type === "Employee Bus" || type === "Other Bus") && (
 									<>
-										<AccessTime fontSize="small" /> Time
-									</>
-								) : (
-									<>
-										<Paid fontSize="small" /> Fare
+										<TableCell component="th" scope="row" align="left">
+											<strong
+												style={{
+													display: "flex",
+													alignItems: "center",
+													gap: "3px",
+													placeContent: "start",
+												}}
+											>
+												<LocationSearching fontSize="small" />
+												From
+											</strong>
+										</TableCell>
+										<TableCell component="th" scope="row" align="left">
+											<strong
+												style={{
+													display: "flex",
+													alignItems: "center",
+													gap: "3px",
+													placeContent: "start",
+												}}
+											>
+												<MyLocation fontSize="small" />
+												To
+											</strong>
+										</TableCell>
 									</>
 								)}
-							</strong>
-						</TableCell>
-					</TableRow>
-				</TableHead>
-				<TableBody>
-					{busesInfo?.map((rowInfo, i) => (
-						<ScheduleTableRow
-							key={i}
-							rowInfo={rowInfo}
-							type={type}
-							reasonFor={reasonFor}
-						/>
-					))}
-				</TableBody>
-			</Table>
+								<TableCell component="th" scope="row" align="right">
+									<strong
+										style={{
+											display: "flex",
+											alignItems: "center",
+											gap: "3px",
+											placeContent: "end",
+										}}
+									>
+										{reasonFor === "Schedule" ? (
+											<>
+												<AccessTime fontSize="small" /> Time
+											</>
+										) : (
+											<>
+												<Paid fontSize="small" /> Fare
+											</>
+										)}
+									</strong>
+								</TableCell>
+							</TableRow>
+						</TableHead>
+						<TableBody>
+							{busesInfo?.map((rowInfo, i) => (
+								<ScheduleTableRow
+									key={i}
+									rowInfo={rowInfo}
+									type={type}
+									reasonFor={reasonFor}
+								/>
+							))}
+						</TableBody>
+					</Table>
+				</Box>
+			</Box>
 		</TableContainer>
 	);
 };

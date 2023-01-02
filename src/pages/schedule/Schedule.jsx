@@ -12,18 +12,16 @@ const Schedule = ({ reasonFor = "Schedule" }) => {
 				<Chip label={`Daffodil Transport - ${reasonFor}`} />
 			</Divider>
 			<Grid container spacing={3}>
-				<Grid item xs={12}>
-					<Grid item container spacing={3}>
-						<Grid item xs={6}>
-							<ScheduleTable type="DSC-DHANMONDI" reasonFor={reasonFor} />
+				<Grid item xs={12} container spacing={3}>
+					<Grid item lg={6} xs={12}>
+						<ScheduleTable type="DSC-DHANMONDI" reasonFor={reasonFor} />
+					</Grid>
+					<Grid item lg={6} xs={12} container spacing={3}>
+						<Grid item xs={12}>
+							<ScheduleTable type="DSC-UTTARA" reasonFor={reasonFor} />
 						</Grid>
-						<Grid item xs container spacing={3}>
-							<Grid item xs={12}>
-								<ScheduleTable type="DSC-UTTARA" reasonFor={reasonFor} />
-							</Grid>
-							<Grid item xs>
-								<ScheduleTable type="DSC-ECB" reasonFor={reasonFor} />
-							</Grid>
+						<Grid item xs>
+							<ScheduleTable type="DSC-ECB" reasonFor={reasonFor} />
 						</Grid>
 					</Grid>
 				</Grid>
@@ -31,14 +29,14 @@ const Schedule = ({ reasonFor = "Schedule" }) => {
 					<Grid item xs={12}>
 						<ScheduleTable type="Employee Bus" reasonFor={reasonFor} />
 					</Grid>
-					<Grid item container spacing={3}>
-						<Grid item xs={4}>
+					<Grid item xs={12} container spacing={3}>
+						<Grid item lg={4} md={6} xs={12}>
 							<ScheduleTable type="DSC-RIVER GHAT" reasonFor={reasonFor} />
 						</Grid>
-						<Grid item xs={4}>
+						<Grid item lg={4} md={6} xs={12}>
 							<ScheduleTable type="DSC-TONGI COLLEGE GATE" reasonFor={reasonFor} />
 						</Grid>
-						<Grid item xs={4}>
+						<Grid item lg={4} md={12} xs={12}>
 							<ScheduleTable type="DSC-BAIPAIL" reasonFor={reasonFor} />
 						</Grid>
 					</Grid>

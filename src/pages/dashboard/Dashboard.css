@@ -1,15 +1,10 @@
-.d-board {
-    text-align: center;
-    /* margin-top: 150px; */
-    margin: 50%;
+.dashboard-form {
+  width: 60%;
+  margin: auto;
+}
 
-    font-family: "Merriweather", serif;
+@media (max-width: 700px) {
+  .dashboard-form {
+    width: 100%;
   }
-.d-title{
-    color: aliceblue;
 }
- 
-.error{
-  color: red;
-}
- 
