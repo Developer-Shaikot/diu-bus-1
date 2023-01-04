@@ -1,12 +1,14 @@
+#contact-form {
+  align-items: center;
+  justify-content: center;
+  margin-left: 80%;
+  margin-right: 20%;
+  padding: 30px;
+}
 
-  #contact-form{
-      align-items: center;
-      justify-content: center;
-      margin-left: 80%;
-      margin-right:20%;
-      padding: 30px;
-  }
- 
-.error{
+.error {
+  display: inline-block;
   color: red;
+  margin-bottom: 8px;
+  margin-top: 5px;
 }

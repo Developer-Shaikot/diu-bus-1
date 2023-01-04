@@ -1,18 +1,56 @@
-import React from "react";
 import "./Contact.css";
+import { useEffect, useState } from "react";
+import { useForm } from "@formspree/react";
 import Footer from "../../components/footer/Footer";
-import { useForm } from "react-hook-form";
 import { Button } from "react-bootstrap";
 import StartIcon from "@mui/icons-material/Start";
+import MessageSent from "./MessageSent";
 
+const initialInfo = { name: "", email: "", phone: "", message: "" };
 const Contact = () => {
-	const {
-		register,
-		handleSubmit,
-		watch,
-		formState: { errors },
-	} = useForm();
-	const onSubmit = (data) => console.log(data);
+	const [state, handleSubmit] = useForm("mjvzdevq");
+	const [inputs, setInputs] = useState({ ...initialInfo, event: null });
+	const [errors, setErrors] = useState(initialInfo);
+
+	const validationFields = () => {
+		inputs.name
+			? setErrors((prev) => ({ ...prev, name: "" }))
+			: setErrors((prev) => ({ ...prev, name: "Name is required" }));
+		inputs.email
+			? setErrors((prev) => ({ ...prev, email: "" }))
+			: setErrors((prev) => ({ ...prev, email: "Email is required" }));
+		inputs.phone
+			? setErrors((prev) => ({ ...prev, phone: "" }))
+			: setErrors((prev) => ({ ...prev, phone: "Phone no. is required" }));
+		inputs.message
+			? setErrors((prev) => ({ ...prev, message: "" }))
+			: setErrors((prev) => ({ ...prev, message: "Message is required" }));
+	};
+
+	useEffect(() => {
+		let errorConditions = !errors.name && !errors.email && !errors.phone && !errors.message;
+		let inputConditions = inputs.name && inputs.email && inputs.phone && inputs.message;
+		if (errorConditions && inputConditions) {
+			handleSubmit(inputs.event)
+				.then(() => console.log("Message sent"))
+				.catch((err) => console.error("Mail not sent- " + err.message));
+		}
+		// eslint-disable-next-line
+	}, [errors]);
+
+	const manageSubmit = (e) => {
+		e.preventDefault();
+		setInputs((prev) => ({ ...prev, event: e }));
+		validationFields();
+	};
+
+	const handleOnChange = (e) => {
+		setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	if (state.succeeded) {
+		return <MessageSent />;
+	}
 
 	return (
 		<div className="d-board text-light ">
@@ -20,14 +58,19 @@ const Contact = () => {
 				Contact With Us
 				<StartIcon className="m-2" />
 			</h3>
-			<form className="dashboard-form" onSubmit={handleSubmit(onSubmit)}>
+			<form className="dashboard-form" onSubmit={manageSubmit}>
 				<div className="form-group mt-3">
 					<label className="label" htmlFor="">
 						NAME
 					</label>
-					<input className="form-control mt-1" placeholder="Name" {...register("name")} />
+					<input
+						name="name"
+						onChange={handleOnChange}
+						className="form-control mt-1"
+						placeholder="Name"
+					/>
 
-					{errors.message && <span className="error">Name is required</span>}
+					{errors.name && <span className="error">{errors.name}</span>}
 					<br />
 				</div>
 
@@ -36,12 +79,13 @@ const Contact = () => {
 						PHONE NUMBER
 					</label>
 					<input
+						name="phone"
+						onChange={handleOnChange}
 						className="form-control mt-1"
-						placeholder="phone no...."
-						{...register("number")}
+						placeholder="phone no."
 					/>
 
-					{errors.message && <span className="error">Phone Number is required</span>}
+					{errors.phone && <span className="error">{errors.phone}</span>}
 					<br />
 				</div>
 
@@ -50,34 +94,33 @@ const Contact = () => {
 						Email
 					</label>
 					<input
+						name="email"
+						onChange={handleOnChange}
 						className="form-control mt-1"
 						placeholder="email"
-						{...register("email")}
 					/>
 
-					{errors.message && <span className="error">Email is required</span>}
+					{errors.email && <span className="error">{errors.email}</span>}
 					<br />
 				</div>
 
 				<div className="form-group">
-					<label className="label">Messege</label>
+					<label className="label">Message</label>
 					<textarea
 						className="form-control mt-1"
 						placeholder="Write your content...."
-						{...register("content", { required: true })}
-						name="content"
+						name="message"
 						rows="5"
 						id="content"
-					/>
+						onChange={handleOnChange}
+					></textarea>
 
-					{errors.message && <span className="error">Description is required</span>}
+					{errors.message && <span className="error">{errors.message}</span>}
 					<br />
 				</div>
 				<Button type="submit" variant="outline-light" size="lg mt-3 mb-2" className="db">
 					Submit
 				</Button>
-				<p style={{ color: "red" }}>{watch.error}</p>
-				{watch.success && <p style={{ color: "green" }}>User successfully</p>}
 			</form>
 			<br />
 			<br />
