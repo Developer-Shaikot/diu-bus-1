@@ -13,7 +13,7 @@ const style = {
 	borderRadius: 3,
 };
 
-const ModalComponent = ({ open, handleClose, children }) => {
+const ModalComponent = ({ open, handleClose, children, modalWidth = 400 }) => {
 	return (
 		<Modal
 			open={open}
@@ -21,7 +21,7 @@ const ModalComponent = ({ open, handleClose, children }) => {
 			aria-labelledby="modal-modal-title"
 			aria-describedby="modal-modal-description"
 		>
-			<Box sx={style}>{children}</Box>
+			<Box sx={{ ...style, width: modalWidth }}>{children}</Box>
 		</Modal>
 	);
 };

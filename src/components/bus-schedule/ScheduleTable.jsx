@@ -17,6 +17,7 @@ import {
 	LocationSearching,
 	MyLocation,
 	Paid,
+	ConfirmationNumber,
 } from "@mui/icons-material";
 
 const ScheduleTable = ({ type, reasonFor }) => {
@@ -81,7 +82,11 @@ const ScheduleTable = ({ type, reasonFor }) => {
 							<TableRow>
 								<TableCell
 									colSpan={
-										type === "Employee Bus" || type === "Other Bus" ? 4 : 2
+										type === "Employee Bus" || type === "Other Bus"
+											? 4
+											: reasonFor === "Schedule"
+											? 2
+											: 3
 									}
 									align="center"
 								>
@@ -96,6 +101,7 @@ const ScheduleTable = ({ type, reasonFor }) => {
 											alignItems: "center",
 											gap: "3px",
 											placeContent: "start",
+											whiteSpace: "nowrap"
 										}}
 									>
 										<DirectionsBus fontSize="small" /> Bus Name
@@ -151,6 +157,20 @@ const ScheduleTable = ({ type, reasonFor }) => {
 										)}
 									</strong>
 								</TableCell>
+								{reasonFor === "Bus Fare" && (
+									<TableCell component="th" scope="row" align="right">
+										<strong
+											style={{
+												display: "flex",
+												alignItems: "center",
+												gap: "3px",
+												placeContent: "end",
+											}}
+										>
+											<ConfirmationNumber fontSize="small" /> Ticket
+										</strong>
+									</TableCell>
+								)}
 							</TableRow>
 						</TableHead>
 						<TableBody>
