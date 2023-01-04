@@ -1,16 +1,56 @@
+import { useState } from "react";
 import ScheduleTable from "../../components/bus-schedule/ScheduleTable";
 import Paper from "@mui/material/Paper";
-import { Chip, Divider, Grid, Typography } from "@mui/material";
+import {
+	Button
+} from "@mui/material";
+import { Chip, Divider, Grid, Stack, Typography } from "@mui/material";
+import GetValue from "./GetValue";
+
+
+
+
+
 
 const Schedule = ({ reasonFor = "Schedule" }) => {
+
+	const [modalIsOpen, setIsOpen] = useState(false);
+
+	function openModal() {
+		setIsOpen(true);
+	}
+
+
+
+	function closeModal() {
+		setIsOpen(false);
+	}
+
+	
+
 	return (
 		<Paper elevation={3} sx={{ p: 3 }}>
 			<Typography pb={3} variant="h4">
 				{reasonFor}
 			</Typography>
-			<Divider textAlign="left" sx={{ mb: 3 }}>
-				<Chip label={`Daffodil Transport - ${reasonFor}`} />
-			</Divider>
+			<Stack direction="row" sx={{ mb: 3 }} alignItems="center" justifyContent="space-between">
+				<Divider textAlign="left" sx={{ mb: 3 }}>
+					<Chip label={`Daffodil Transport - ${reasonFor}`} />
+				</Divider>
+				<Button
+					sx={{ height: "33px", borderRadius: "10px" }}
+					variant="contained"
+					onClick={openModal}
+				>
+					<small>
+						Calculate <span className="sm-remove"> Bus Fare </span>
+					</small>
+				</Button>
+
+
+			</Stack>
+			<GetValue modalIsOpen={modalIsOpen} closeModal={closeModal}></GetValue>
+
 			<Grid container spacing={3}>
 				<Grid item xs={12} container spacing={3}>
 					<Grid item lg={6} xs={12}>
@@ -42,7 +82,7 @@ const Schedule = ({ reasonFor = "Schedule" }) => {
 					</Grid>
 				</Grid>
 			</Grid>
-		</Paper>
+		</Paper >
 	);
 };
 
